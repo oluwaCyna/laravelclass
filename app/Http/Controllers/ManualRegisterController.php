@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendingMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Mail;
 
 class ManualRegisterController extends Controller
 {
@@ -29,7 +32,13 @@ class ManualRegisterController extends Controller
             'password' => Hash::make($credentials['password']),
         ]);
 
+        event(new Registered($user));
+
+        Mail::to($user->email)->send(new SendingMail($user));
+
         Auth::login($user);
+
+        return redirect(route('home'));
  
      }
 }

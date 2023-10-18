@@ -18,12 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->middleware(['auth']);
+
+Auth::routes(['verify' => true]);
+
+Route::middleware(['forTest', 'verified'])->get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['web', 'auth'])->group(function() {
+
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/manual-login', [ManualLoginController::class, 'manual'])->name('manual');
 Route::post('/manual-login-save', [ManualLoginController::class, 'manualLogin'])->name('manual.save');
 
