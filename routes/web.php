@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ManualLoginController;
 use App\Http\Controllers\ManualRegisterController;
 use Illuminate\Support\Facades\Auth;
@@ -33,3 +34,6 @@ Route::post('/manual-login-save', [ManualLoginController::class, 'manualLogin'])
 
 Route::get('/manual-register', [ManualRegisterController::class, 'manualR'])->name('manualR');
 Route::post('/manual-register-save', [ManualRegisterController::class, 'manualRegister'])->name('manualRegister');
+
+Route::get('/ajax-get', [AjaxController::class, 'get'])->name('get');
+Route::post('/ajax-post', [AjaxController::class, 'post'])->name('post');
