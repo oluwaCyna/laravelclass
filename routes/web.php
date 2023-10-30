@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManualLoginController;
 use App\Http\Controllers\ManualRegisterController;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,7 @@ Auth::routes(['verify' => true]);
 Route::middleware(['forTest', 'verified'])->get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['web', 'auth'])->group(function() {
+    Route::post('/upload', [HomeController::class, 'upload'])->name('upload');
 
 });
 Route::get('/manual-login', [ManualLoginController::class, 'manual'])->name('manual');

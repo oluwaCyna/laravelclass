@@ -1,0 +1,188 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "b06adf40-d9ef-40b6-884a-b7f81e6b8b5d",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Register a new user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"Mujeeeb\",\"email\":\"adele40@example.net\",\"password\":\"9E@*HUA\"}"
+                        },
+                        "description": "Use this endpoint to register a new user",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{ \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODc2YmY1ODFkMmQ2Y2YzOGM1OWEzYmFkMDFlNjVmNzc0NTVhMWFkZDgxOWRlODA5MzI5ODRjMjIwNTA0ODc0MGE2OTcyYzcxYjVjYjcxZTkiLCJpYXQiOjE2OTg2NjIzMDEuNDMxMjM5LCJuYmYiOjE2OTg2NjIzMDEuNDMxMjQ1LCJleHAiOjE3MzAyODQ3MDEuMDM3NzA0LCJzdWIiOiIyMSIsInNjb3BlcyI6W119.jisjaYBphG1uvxn00gJ8r-jGNbbk-w4VbK2abpjdey6--4n0m6fgEW0sfJKEH_YmioL6ozICXasHIDQsIuM2QlAdULj7P6ioKzEWsIbaPCHIyv4z_9sqsYTqWiQs_CohEAgJEIj5l6lGPUVjfkzoAOFaTz61cYWTvEYQGIzvrOSv9RpWIGfqruSn5EK_CAFZwp3BUOAKXN9nZr6qHNtmtdHiw5o28WNIxE09uB0Zvx6rKVMQs2Wrs0xgpt6okaBGRAM2ggc5aYFWXwl1_AdAt6N3tdGZSzHt93_JbnfuKuU-stSwkgta6JrsFlSbXQkK9GxpIkLh-NpOmGzSivkmp5dZF4el8EV37Wy_dAnL34-01p5WCKsDmFXEEc6aU7BZ4DV82JqrW31YSmxnFKgJkDdT4UHRV4DdKhQtyvU2CE-r9Z8jdv8APv9yjF2sf4WSgw-BYCkjnIOhsTFndVsioNORi6bVJfae-sCKTOpaxbazHJfimzf74rtQ4NZRTauzXvCvTdX2p6IbKBK2btZnZ8CTK4Whzg8xZzcdQHlldLNYphcrhMr6oJ_NYnnYPvMI5XPAvVGb9vuO5dJbeo4T7PgBM_lKeWV-4jZRFltAgKTbNz4ZI2oKe5tC0CTZgav7OHXWVhQqw8oik_E9kMT-Xz1kAkkCSkJA5yAUDYzEZD4\", \"user\": { \"id\": 3, \"name\": \"Name\", \"email\": \"test@test.com\", \"email_verified_at\": null, \"created_at\": \"2023-10-27T11:14:48.000000Z\", \"updated_at\": \"2023-10-27T11:14:48.000000Z\" } }",
+                            "name": "when user is registered successfully"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{ \"email\": [ \"The email field is required.\" ], \"password\": [ \"The password field is required.\" ] }",
+                            "name": "when validation fails"
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{ \"Something went wrong\" }",
+                            "name": "Server error"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 400,
+                            "body": "{\"email\":[\"The email field is required.\"],\"password\":[\"The password field is required.\"]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
+    }
+}

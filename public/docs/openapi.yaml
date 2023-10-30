@@ -1,0 +1,181 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/register:
+    post:
+      summary: 'Register a new user'
+      operationId: registerANewUser
+      description: 'Use this endpoint to register a new user'
+      parameters: []
+      responses:
+        200:
+          description: 'when user is registered successfully'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODc2YmY1ODFkMmQ2Y2YzOGM1OWEzYmFkMDFlNjVmNzc0NTVhMWFkZDgxOWRlODA5MzI5ODRjMjIwNTA0ODc0MGE2OTcyYzcxYjVjYjcxZTkiLCJpYXQiOjE2OTg2NjIzMDEuNDMxMjM5LCJuYmYiOjE2OTg2NjIzMDEuNDMxMjQ1LCJleHAiOjE3MzAyODQ3MDEuMDM3NzA0LCJzdWIiOiIyMSIsInNjb3BlcyI6W119.jisjaYBphG1uvxn00gJ8r-jGNbbk-w4VbK2abpjdey6--4n0m6fgEW0sfJKEH_YmioL6ozICXasHIDQsIuM2QlAdULj7P6ioKzEWsIbaPCHIyv4z_9sqsYTqWiQs_CohEAgJEIj5l6lGPUVjfkzoAOFaTz61cYWTvEYQGIzvrOSv9RpWIGfqruSn5EK_CAFZwp3BUOAKXN9nZr6qHNtmtdHiw5o28WNIxE09uB0Zvx6rKVMQs2Wrs0xgpt6okaBGRAM2ggc5aYFWXwl1_AdAt6N3tdGZSzHt93_JbnfuKuU-stSwkgta6JrsFlSbXQkK9GxpIkLh-NpOmGzSivkmp5dZF4el8EV37Wy_dAnL34-01p5WCKsDmFXEEc6aU7BZ4DV82JqrW31YSmxnFKgJkDdT4UHRV4DdKhQtyvU2CE-r9Z8jdv8APv9yjF2sf4WSgw-BYCkjnIOhsTFndVsioNORi6bVJfae-sCKTOpaxbazHJfimzf74rtQ4NZRTauzXvCvTdX2p6IbKBK2btZnZ8CTK4Whzg8xZzcdQHlldLNYphcrhMr6oJ_NYnnYPvMI5XPAvVGb9vuO5dJbeo4T7PgBM_lKeWV-4jZRFltAgKTbNz4ZI2oKe5tC0CTZgav7OHXWVhQqw8oik_E9kMT-Xz1kAkkCSkJA5yAUDYzEZD4
+                  user:
+                    id: 3
+                    name: Name
+                    email: test@test.com
+                    email_verified_at: null
+                    created_at: '2023-10-27T11:14:48.000000Z'
+                    updated_at: '2023-10-27T11:14:48.000000Z'
+                properties:
+                  token:
+                    type: string
+                    example: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODc2YmY1ODFkMmQ2Y2YzOGM1OWEzYmFkMDFlNjVmNzc0NTVhMWFkZDgxOWRlODA5MzI5ODRjMjIwNTA0ODc0MGE2OTcyYzcxYjVjYjcxZTkiLCJpYXQiOjE2OTg2NjIzMDEuNDMxMjM5LCJuYmYiOjE2OTg2NjIzMDEuNDMxMjQ1LCJleHAiOjE3MzAyODQ3MDEuMDM3NzA0LCJzdWIiOiIyMSIsInNjb3BlcyI6W119.jisjaYBphG1uvxn00gJ8r-jGNbbk-w4VbK2abpjdey6--4n0m6fgEW0sfJKEH_YmioL6ozICXasHIDQsIuM2QlAdULj7P6ioKzEWsIbaPCHIyv4z_9sqsYTqWiQs_CohEAgJEIj5l6lGPUVjfkzoAOFaTz61cYWTvEYQGIzvrOSv9RpWIGfqruSn5EK_CAFZwp3BUOAKXN9nZr6qHNtmtdHiw5o28WNIxE09uB0Zvx6rKVMQs2Wrs0xgpt6okaBGRAM2ggc5aYFWXwl1_AdAt6N3tdGZSzHt93_JbnfuKuU-stSwkgta6JrsFlSbXQkK9GxpIkLh-NpOmGzSivkmp5dZF4el8EV37Wy_dAnL34-01p5WCKsDmFXEEc6aU7BZ4DV82JqrW31YSmxnFKgJkDdT4UHRV4DdKhQtyvU2CE-r9Z8jdv8APv9yjF2sf4WSgw-BYCkjnIOhsTFndVsioNORi6bVJfae-sCKTOpaxbazHJfimzf74rtQ4NZRTauzXvCvTdX2p6IbKBK2btZnZ8CTK4Whzg8xZzcdQHlldLNYphcrhMr6oJ_NYnnYPvMI5XPAvVGb9vuO5dJbeo4T7PgBM_lKeWV-4jZRFltAgKTbNz4ZI2oKe5tC0CTZgav7OHXWVhQqw8oik_E9kMT-Xz1kAkkCSkJA5yAUDYzEZD4
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 3
+                      name:
+                        type: string
+                        example: Name
+                      email:
+                        type: string
+                        example: test@test.com
+                      email_verified_at:
+                        type: string
+                        example: null
+                      created_at:
+                        type: string
+                        example: '2023-10-27T11:14:48.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-10-27T11:14:48.000000Z'
+        400:
+          description: 'when validation fails'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  email:
+                    - 'The email field is required.'
+                  password:
+                    - 'The password field is required.'
+                properties:
+                  email:
+                    type: array
+                    example:
+                      - 'The email field is required.'
+                    items:
+                      type: string
+                  password:
+                    type: array
+                    example:
+                      - 'The password field is required.'
+                    items:
+                      type: string
+        500:
+          description: 'Server error'
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{ "Something went wrong" }'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'This is the name of the new user.'
+                  example: Mujeeeb
+                email:
+                  type: string
+                  description: 'This is the email of the new user'
+                  example: adele40@example.net
+                password:
+                  type: string
+                  description: 'This is the password of the new user'
+                  example: '9E@*HUA'
+              required:
+                - name
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  email:
+                    - 'The email field is required.'
+                  password:
+                    - 'The password field is required.'
+                properties:
+                  email:
+                    type: array
+                    example:
+                      - 'The email field is required.'
+                    items:
+                      type: string
+                  password:
+                    type: array
+                    example:
+                      - 'The password field is required.'
+                    items:
+                      type: string
+      tags:
+        - Endpoints
+      security: []
+  /api/user:
+    post:
+      summary: ''
+      operationId: postApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []

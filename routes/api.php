@@ -26,3 +26,8 @@ Route::post('/register', [RegisterController::class, 'register'])->name('api.reg
 Route::post('/login', [LoginController::class, 'login'])->name('api.login');
 
 Route::middleware(['auth:api'])->post('/user', [UserController::class, 'user'])->name('api.user');
+
+// Route::middleware(['auth:api'])->group(function() {
+//     Route::post('/user', [UserController::class, 'user'])->name('api.user');
+
+// });

@@ -75,6 +75,50 @@
                 </div>
             </div>
         </div>
+        <form method="post" action="{{route('upload')}}" enctype="multipart/form-data">
+            @csrf
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Picture Upload') }}</div>
+
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <label for="picture"
+                                class="col-md-4 col-form-label text-md-end">{{ __('User Picture') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="picture" type="file"
+                                    class="form-control @error('picture') is-invalid @enderror" name="picture"
+                                    value="{{ old('picture') }}" required autocomplete="id" autofocus>
+
+                                @error('picture')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button id="button" type="submit" class="btn btn-primary">
+                                    {{ __('submit') }}
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+{{-- @php
+    $picture = App\Models\Picture::find(1);
+@endphp --}}
+
+        <img class="img-responsive" src="{{ asset("images/$picture->picture") }}" alt="Picture" />
     </div>
 @endsection
 
